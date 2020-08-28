@@ -9,7 +9,8 @@ let Booking = new mongoose.Schema({
 		mobile: String,
 	},
 	hut:String,
-	price:Number
+	price:String,
+	paymentId:String
 });
 
 module.exports = mongoose.model("Booking", Booking);
