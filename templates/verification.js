@@ -1,4 +1,0 @@
-const html = "<style> h1 {font-size:100px}</style> <h1 style='text-align:center; color:blue'>Welcome to the Columbia Valley Hut Society <h1> <p style='text-align:center; line-height:1.1rem; margin:30px auto; font-size:11px; width:70%; color:black; outline:none;'>In order to use your new account and create new reservations we require that you verify your email address. Please click the link below and you will be redirected to the Columbia Valley Hut Society home page. Thank You!</p> <button style='border:none; border-radius:5px; background-color:blue; display:block; margin:auto; padding:10px 20px'><a style='color:white;'>Verify Email</a></button>"
-
-
-module.exports = html
