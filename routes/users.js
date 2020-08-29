@@ -92,7 +92,6 @@ router.post("/register", (req, res) => {
 			});
 		})
 		.catch((err) => {
-			console.log(err);
 			res.status(400).send("Unable to create JSON Web Token.");
 		});
 });
@@ -107,7 +106,6 @@ router.post("/login", (req, res) => {
 		.populate('comments')
 		.populate('reservations')
 		.then((user) => {
-			console.log("user found", user)
 			if (!user) {
 				res.status(400).send("User does not exist");
 			}
@@ -145,7 +143,6 @@ router.post("/login", (req, res) => {
 			});
 		})
 		.catch((err) => {
-			console.log(err);
 			resstatus(400).send("Unable to create JSON Web Token");
 		});
 });

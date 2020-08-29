@@ -2,17 +2,10 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const Moment = require("moment");
-const MomentRange = require("moment-range");
-
+const sgMail = require('@sendgrid/mail');
 const cors = require("cors");
-const paypal = require("paypal-rest-sdk");
-const auth = require("./middleware/auth");
-const sgMail = require("@sendgrid/mail");
-const verifyUser = require("./middleware/VerifyUser");
-require('dotenv').config()
-const moment = MomentRange.extendMoment(Moment);
 
+require('dotenv').config()
 app.use(bodyParser.json());
 app.use(cors());
 
@@ -25,14 +18,6 @@ const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", () => {
 	console.log("connected to database");
-});
-
-paypal.configure({
-	mode: process.env.PAYPAL_ENV,
-	client_id:
-		process.env.PAYPAL_CLIENT_ID,
-	client_secret:
-		process.env.PAYPAL_CLIENT_SECRET,
 });
 
 sgMail.setApiKey(

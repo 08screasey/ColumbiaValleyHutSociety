@@ -3,6 +3,9 @@ const router = express.Router();
 const auth = require("../middleware/auth");
 const verifyUser = require("../middleware/VerifyUser");
 const Hut = require("../models/Hut.model");
+const Moment = require("moment");
+const MomentRange = require("moment-range");
+const moment = MomentRange.extendMoment(Moment);
 
 router.get("/", auth, verifyUser, (req, res) => {
 	Hut.find((err, huts) => {

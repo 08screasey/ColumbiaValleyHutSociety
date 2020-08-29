@@ -5,23 +5,34 @@ const admin = require("../middleware/admin");
 const verifyUser = require("../middleware/VerifyUser");
 const Booking = require("../models/Booking.model");
 const Hut = require("../models/Hut.model");
-const User = require("../models/User.model")
+const User = require("../models/User.model");
+const Moment = require("moment");
+const MomentRange = require("moment-range");
+const moment = MomentRange.extendMoment(Moment);
+const paypal = require("paypal-rest-sdk");
+const sgMail = require('@sendgrid/mail');
+
+paypal.configure({
+	mode: process.env.PAYPAL_ENV,
+	client_id:
+		process.env.PAYPAL_CLIENT_ID,
+	client_secret:
+		process.env.PAYPAL_CLIENT_SECRET,
+});
 
 router.post("/search", auth, (req, res) => {
-	console.log(req.body);
 	if (req.user.id !== process.env.CVHS_ADMIN_ID) {
 		res.status(401).send("Not Authorized");
 	} else {
 		const locator = {};
 		locator[req.body.type] = req.body.query;
-		console.log(locator);
 		Booking.find(locator, (err, bookings) => {
 			if (err) {
 				res.status(500).send("Unable to search bookings");
 			} else if (!bookings) {
 				res.status(400).send("No Bookings Found");
 			} else {
-				console.log(bookings);
+
 				res.status(200).send(bookings);
 			}
 		});
@@ -32,7 +43,7 @@ router.post("/search", auth, (req, res) => {
 router.delete("/search/:id", auth, admin, (req, res) => {
 	Booking.findByIdAndRemove(req.params.id, (err, booking) => {
 		if (err) {
-			console.log("ERROR Locating booking");
+			
 			res.status(500).send("Problem locating booking");
 		} else {
 			var data = {
@@ -46,15 +57,14 @@ router.delete("/search/:id", auth, admin, (req, res) => {
 				refund
 			) {
 				if (error) {
-					console.error(JSON.stringify(error));
+					
 				} else {
-					console.log("Refund Sale Response");
-					console.log(JSON.stringify(refund));
+					
 					Hut.findOne({ name: booking.hut })
 						.populate("bookings")
 						.exec((err, hut) => {
 							if (err) {
-								console.log("ERROR Locating hut");
+								
 								res.status(500).send("Problem locating hut");
 							} else {
 								booking.dates.forEach((date) => {
@@ -97,7 +107,7 @@ router.put("/search/:id/edit", auth, admin, (req, res) => {
 					if (flagged) {
 						res.status(401).send("Date has already been booked.");
 					} else {
-						console.log(booking.dates, "PRE");
+						
 						booking.dates.forEach((date) => {
 							hut.filledDates.pull(date);
 						});
@@ -105,7 +115,7 @@ router.put("/search/:id/edit", auth, admin, (req, res) => {
 						req.body.dates.forEach((date) => {
 							hut.filledDates.push(date);
 						});
-						console.log(booking.dates, "POST");
+					
 						booking.save();
 						hut.save();
 						res.status(200).send("Booking successfully updated");
@@ -165,7 +175,7 @@ router.post("/:hut", auth, verifyUser, (req, res) => {
 			});
 			hut.temporaryBookings.push(newBooking);
 			hut.save((err, hut) => {
-				console.log(hut);
+				
 				setTimeout(() => {
 					hut.temporaryBookings.id(newBooking._id).remove();
 					hut.save();
@@ -182,8 +192,6 @@ router.post("/:hut", auth, verifyUser, (req, res) => {
 							return acc + hut.price[index];
 						}, 0);
 					}
-
-					console.log(price);
 
 					var create_payment_json = {
 						intent: "sale",
@@ -217,14 +225,14 @@ router.post("/:hut", auth, verifyUser, (req, res) => {
 							},
 						],
 					};
-					console.log(create_payment_json);
+					
 
 					paypal.payment.create(create_payment_json, function (
 						error,
 						payment
 					) {
 						if (error) {
-							console.log(error);
+							
 						} else {
 							for (let i = 0; i < payment.links.length; i++) {
 								if (payment.links[i].rel === "approval_url") {
@@ -235,8 +243,6 @@ router.post("/:hut", auth, verifyUser, (req, res) => {
 									});
 								}
 							}
-							console.log("Create Payment Response");
-							console.log(payment);
 						}
 					});
 				}
@@ -286,8 +292,6 @@ router.post("/:hut/book", auth, verifyUser, (req, res) => {
 				}, 0);
 			}
 
-			console.log(price);
-
 			const execute_payment_json = {
 				payer_id: req.body.paymentInfo.payerId,
 				transactions: [
@@ -305,7 +309,6 @@ router.post("/:hut/book", auth, verifyUser, (req, res) => {
 				execute_payment_json,
 				function (error, payment) {
 					if (error) {
-						console.log(error.response);
 						throw error;
 					} else {
 						if (
@@ -314,15 +317,11 @@ router.post("/:hut/book", auth, verifyUser, (req, res) => {
 							payment.transactions[0].related_resources &&
 							payment.transactions[0].related_resources[0].sale
 						) {
-							console.log(
-								"order authorization completed successfully"
-							);
+							
 							// Capture order id
 							const orderData =
 								payment.transactions[0].related_resources[0]
 									.sale.id;
-
-							console.log(payment);
 							Booking.create(
 								{
 									...req.body,
@@ -337,7 +336,7 @@ router.post("/:hut/book", auth, verifyUser, (req, res) => {
 											"There was an unknown issue creating booking."
 										);
 									} else {
-										console.log(booking);
+										
 										Hut.findOne(
 											{ name: req.params.hut },
 											(err, hut) => {

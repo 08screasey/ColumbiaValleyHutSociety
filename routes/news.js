@@ -42,7 +42,7 @@ router.delete("/:id", auth, admin, (req, res) => {
 				if (err) {
 					res.status(500).send("Unable to delete post.");
 				} else {
-					res.status(200).send("Post successfully deleted.");
+					res.status(200).send(news);
 				}
 			});
 		});
@@ -53,9 +53,8 @@ router.put("/:id", auth, admin, (req, res) => {
 	News.findByIdAndUpdate(
 		req.params.id,
 		req.body.post,
-		{ new: true },
+		{new:true},
 		(err, news) => {
-			console.log(news);
 			if (err || !news) {
 				res.status(500).send("Post was not updated. Please try again.");
 			} else {
