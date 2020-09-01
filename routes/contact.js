@@ -17,7 +17,6 @@ router.post("/", (req, res) => {
 	sgMail.send(msg).then(response=>{
 		res.status(200).send("Successfully Sent")
 	},err=>{
-		console.log(err.response.body)
 		res.status(400).send("Unable to send mail")
 	});
 });

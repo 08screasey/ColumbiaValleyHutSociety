@@ -46,7 +46,6 @@ router.delete("/search/:id", auth, admin, (req, res) => {
 		if (err) {
 			res.status(500).send("Problem locating booking");
 		} else {
-			console.log(booking)
 			var data = {
 				amount: {
 					total: (parseFloat(booking.price) * 0.8).toFixed(2),
@@ -91,7 +90,6 @@ router.put("/search/:id/edit", auth, admin, (req, res) => {
 		if (err || !booking) {
 			res.status(404).send("Booking not found.");
 		} else {
-			console.log(booking)
 			Hut.findOne({ name: booking.hut }, (err, hut) => {
 				if (err || !hut) {
 					res.status(404).send("Hut not found.");
@@ -110,7 +108,6 @@ router.put("/search/:id/edit", auth, admin, (req, res) => {
 					if (flagged) {
 						res.status(401).send("Date has already been booked.");
 					} else {
-						console.log(booking)
 						booking.dates.forEach((date) => {
 							hut.filledDates.pull(date);
 						});
@@ -124,7 +121,6 @@ router.put("/search/:id/edit", auth, admin, (req, res) => {
 							}
 						}
 						booking.price = priceCalc(hut.price, req.body.dates);
-						console.log(booking)
 						booking.save();
 						hut.save();
 						res.status(200).send("Booking successfully updated");
