@@ -1,0 +1,14 @@
+.ReservationsContainer {
+	padding-top: 30px;
+	margin-top: 450px;
+}
+
+.Reservations.Header-BG {
+	background-image: url("../../assets/mountain 2.jpg");
+	background-position: center 80%;
+	background-attachment: scroll;
+	height: 500px;
+	position: fixed;
+	top: 0;
+	z-index: -1;
+}

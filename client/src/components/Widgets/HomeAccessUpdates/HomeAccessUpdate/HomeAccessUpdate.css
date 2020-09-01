@@ -1,0 +1,16 @@
+.HomeAccessUpdate {
+	margin-top: 10px;
+	border-radius: 5px;
+	transition: 1s;
+}
+
+.HomeAccessUpdate.Exit {
+	transform: translateX(-100vw);
+}
+
+.HomeAccessUpdateLink a {
+	color: #224146;
+}
+.HomeAccessUpdateLink a:hover {
+	color: #224146;
+}

@@ -1,0 +1,218 @@
+body {
+  margin: 0;
+  font-family: "Roboto Slab", serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Bungee", cursive;
+}
+.Bungee {
+  font-family: "Bungee", cursive;
+}
+
+.Orange {
+  color: #e3ba31;
+}
+.BrightOrange {
+  color: hsla(46, 96%, 60%, 1);
+}
+.Brown {
+  color: #9d8622;
+}
+.DarkBlue {
+  color: #224146;
+}
+.Grey {
+  color: hsl(207.5, 20.7%, 98.9%);
+}
+.Blue {
+  color: #336168;
+}
+.BrightBlue{
+  color:hsl(190.8, 55.4%, 45.6%);
+}
+.Red {
+  color: hsl(8.3,44.6%,40.4%);
+}
+.BrightRed {
+  color: hsl(0,100%,62.4%);
+}
+.Green {
+  color: hsl(148.1,75.3%,48.9%);
+} 
+
+.Orange-BG {
+  background-color: #e3ba31;
+}
+.Brown-BG {
+  background-color: #9d8622;
+}
+.DarkBlue-BG {
+  background-color: #224146;
+}
+.Grey-BG {
+  background-color: hsl(207.5, 20.7%, 92.9%);
+}
+.DarkGrey-BG {
+  background-color: hsl(207.5, 20.7%, 86.9%);
+}
+.Blue-BG {
+  background-color: hsl(190.8, 55.4%, 51.6%);
+}
+.Red-BG {
+  background-color: hsla(11, 76%, 39%, 0.1);
+}
+.Icon.Red:hover {
+  color: hsl(8.3,44.6%,30.4%);
+}
+
+.Font0 {
+  font-size: 65px;
+}
+.Font1 {
+  font-size: 50px;
+}
+.Font2 {
+  font-size: 40px;
+}
+.Font3 {
+  font-size: 30px;
+}
+.Font4 {
+  font-size: 20px;
+}
+.Font5 {
+  font-size: 15px;
+}
+.Font6 {
+  font-size: 11px;
+}
+
+@media (max-width: 767.98px) {
+  .Font0 {
+    font-size: 50px;
+  }
+  .Font1 {
+    font-size: 45px;
+  }
+  .Font2 {
+    font-size: 34px;
+  }
+}
+
+.Header-BG {
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 400px;
+  background-attachment: fixed;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.Header-BG-Overlay {
+  width: 100%;
+  height: 400px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.Button {
+  border-radius: 5px;
+  padding: 10px;
+  border-style: none;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2), 2px 2px 2px rgba(0, 0, 0, 0.4);
+  transform: translateY(-3px) translateX(-3px);
+  transition: 0.5s;
+}
+
+.Button:hover {
+  transform: translateY(0) translateX(0);
+  box-shadow: none;
+}
+.Button.DarkBlue-BG:hover {
+
+  color: #f3ca41;
+  background: #325156;
+}
+.Button:disabled {
+  transform: translateY(0) translateX(0);
+  box-shadow: none;
+  color: hsl(207.5, 20.7%, 92.9%);
+  background: hsl(188.3,34.6%,85.4%);
+}
+
+.Button:focus {
+  outline: none;
+}
+
+.Link{
+  cursor: pointer;
+}
+.BrightBlue.Link:hover{
+  color: hsl(190.8, 55.4%, 25.6%);
+}
+
+.FormControl {
+  display: block;
+  width: 100%;
+  border-radius: 20px;
+  padding: 20px;
+  height: auto;
+  background: rgba(250, 250, 250, 1);
+  border: 0;
+  outline: 0;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1), inset -5px -5px 10px #fbfcff;
+  transition: 0.5s;
+}
+
+.FormControl.Invalid,
+.FormControl.Invalid:focus {
+  box-shadow: inset 2px 2px 5px hsl(0,30%,62.4%), inset -5px -5px 10px hsl(0,100%,99.4%);
+}
+
+.FormControl:focus {
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1), inset -1px -1px 2px #fbfcff;
+}
+
+.FormGroup {
+  margin: auto;
+  text-align: left;
+  width: 100%;
+  max-width: 500px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+input {
+  font-family: "Roboto Slab", serif !important;
+}
+
+.Raised {
+  border-radius: 20px;
+  box-shadow: -5px -5px 20px #ffffff, 5px 5px 20px #babecc;
+}
+
+.RaisedText {
+  text-shadow: -5px -5px 20px white, 3px 4px 5px rgba(0, 0, 0, 0.1),
+    5px 5px 20px rgba(100, 100, 100, 0.1);
+}
+
+.TextOutline {
+  text-shadow: 1px 1px 1px white;
+}

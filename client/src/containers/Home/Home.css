@@ -1,0 +1,37 @@
+.Home{margin-top: 450px;}
+.Img-Background{
+	position:fixed;
+	z-index: -1;
+	top:0;
+	left:0;
+	height:550px;
+	width:100%;
+	background-size: cover;
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	background-position: 60% 80%;
+	background-image: url(../../assets/MAndy snow 2.jpg)
+}
+
+.Mountain-svg{
+	width: 100%;
+	min-height: 100px;
+	object-fit: cover;
+	fill:hsl(207.5,20.7%,93.9%) !important;
+}
+.Home-Container{
+	margin-top:40vh;
+	height: 100%;
+	width: 100%;
+	z-index:10;
+}
+
+.Home-Container div.Grey-BG{
+	margin-top: -3px;
+}
+
+@media (min-width: 500px){
+	.Img-Background{
+		height:100%;
+	}
+}

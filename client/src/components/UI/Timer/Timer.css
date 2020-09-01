@@ -1,0 +1,9 @@
+.Timer {
+	width: 100%;
+	max-width: 200px;
+	display: block;
+	margin: auto;
+	border-radius: 20px;
+	box-shadow: -5px -5px 20px white, 3px 4px 5px rgba(0, 0, 0, 0.1),
+		5px 5px 20px rgba(100, 100, 100, 0.1);
+}

@@ -1,0 +1,121 @@
+.Modal{
+	/*width:80%;
+	height:70%;
+	top:15%;
+	left:10%;
+*/	position: fixed;
+	z-index:100;
+	overflow:hidden;
+}
+
+.Modal.Small {
+	width:300px;
+	/*height:250px;*/
+	top:calc(50% - 150px);
+	left:calc(50% - 150px);
+}
+
+.Modal.Big{
+	width:90%;
+	height:80%;
+	top:10%;
+	left:5%;
+	overflow: auto;
+}
+
+.Small.ModalAnimation-enter{
+	height:50px;
+}
+
+.Small.ModalAnimation-enter-active{
+	transition: 0.4s;
+	height:250px;
+}
+.Small.ModalAnimation-enter-done{
+	height:250px;
+}
+.Small.ModalAnimation-enter button{
+	height:100%;
+	color:rgba(255,255,255,0);
+}
+.Small.ModalAnimation-enter-active button{
+	height:50px;
+	transition:0.5s;
+	transition-delay: 0.3s;
+	color:rgba(255,255,255,1);
+}
+.Small.ModalAnimation-enter-done button{
+	height:50px;
+	color:rgba(255,255,255,1);
+}
+
+.Small.ModalAnimation-exit{
+	height:250px;
+}
+
+.Small.ModalAnimation-exit-active{
+	transition: 0.4s;
+	height:50px;
+	transition-delay: 0.3s;
+}
+
+.Small.ModalAnimation-exit-done{
+	height:50px;
+}
+
+.Small.ModalAnimation-exit button{
+	color:rgba(255,255,255,1);
+	height:50px;
+}
+.Small.ModalAnimation-exit-active button{
+	height:100%;
+	transition:0.5s;
+	color:rgba(255,255,255,0);
+}
+.Small.ModalAnimation-exit-done button{
+	color:rgba(255,255,255,0);
+	height:100%;
+}
+
+.Modal button {
+	position:absolute;
+	height:50px;
+	width:100%;
+	bottom:0px;
+	left:0px;
+	outline: none;
+	border:none;
+}
+
+.Modal button:target,
+.Modal button:focus {
+	outline:none;
+}
+
+.Modal.Big button{
+	color:white;
+}
+
+.Modal .Content{
+	padding:22px 30px 40px 30px;
+}
+
+.Modal.Error button{
+	background-color: hsl(0,100%,62.4%);
+}
+
+.Modal.Success button{
+	background-color: hsl(148.1,75.3%,53.9%);
+}
+
+
+
+.Backdrop{
+	position: fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background-color: rgba(0,0,0,0.5);
+	z-index:99;
+}

@@ -1,0 +1,52 @@
+.AccountReservations h3:hover{
+	text-decoration: underline;
+}
+
+.AccountInfo{
+	padding:100px 5px 100px 5px;
+}
+.AccountReservations{
+	max-width: 800px;
+	margin:auto;
+}
+
+.Trip{
+	position: relative;
+	overflow: hidden;
+	min-height: 150px
+}
+
+.Trip:before{
+	content:"";
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background-color:rgba(0,0,0,0.7);
+}
+.Trip.olive{
+background: url(../../assets/alex 11.jpg);
+background-size: cover;
+background-position: center 25%;
+}
+.Trip.jumbo{
+	background: url(../../assets/Jumbo Pass Cabin.jpg);
+background-size: cover;
+background-position: center 55%;
+}
+.Trip.mcmurdo{
+	background: url(../../assets/HutSociety_McMurdo4.jpg);
+background-size: cover;
+background-position: center 81%;
+}
+.Trip.david-white{
+	background: url(../../assets/HutSociety_DavidWhite2.jpg);
+background-size: cover;
+background-position: center 25%;
+}
+.Trip.kingsbury{
+	background: url(../../assets/purcells 21.jpg);
+background-size: cover;
+background-position: center 25%;
+}

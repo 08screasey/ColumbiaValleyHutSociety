@@ -1,0 +1,12 @@
+.Toolbar {
+	position: fixed;
+	top: 0;
+	z-index: 103;
+	height: 60px;
+	width: 100%;
+	transition: 0.3s;
+}
+
+.Scrolling {
+	background-color: #224146;
+}

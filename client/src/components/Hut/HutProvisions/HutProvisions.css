@@ -1,0 +1,47 @@
+ul.ProvisionList {
+	list-style: none;
+	margin: 0px -15px !important;
+}
+
+.ProvisionList li {
+	width: 150px;
+	height: 110px;
+}
+
+.Provision {
+	color: grey;
+}
+
+.Provision svg {
+	fill: grey;
+}
+
+.Provision.Limited {
+	color: #e3ba31;
+}
+.Provision.Limited svg {
+	fill: #e3ba31;
+}
+
+.Provision.Available {
+	color: green;
+}
+.Provision.Available svg {
+	fill: green;
+}
+
+.ProhibitedList li {
+	width: 60%;
+}
+
+ul.ProhibitedList {
+	list-style: none;
+}
+
+.Red svg {
+	fill: hsla(11, 76%, 39%, 1);
+}
+
+.Red-BG h4 {
+	text-shadow: 1px 1px 1px hsla(11, 76%, 39%, 0.6);
+}

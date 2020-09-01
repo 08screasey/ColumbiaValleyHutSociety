@@ -1,0 +1,35 @@
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px auto;
+}
+.separator::before {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-image: linear-gradient(
+        270deg,
+        rgba(227, 186, 49, 1) 0%,
+        rgba(0, 0, 0, 0) 100%
+    );
+}
+.separator::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-image: linear-gradient(
+        90deg,
+        rgba(227, 186, 49, 1) 0%,
+        rgba(0, 0, 0, 0) 100%
+    );
+}
+.separator::before {
+    margin-right: 0.25em;
+}
+.separator::after {
+    margin-left: 0.25em;
+}
+.separator svg {
+    stroke: #e3ba31;
+}

@@ -1,0 +1,13 @@
+.NavItems {
+	list-style: none;
+	padding: 0px;
+	height: 80%;
+}
+
+.NavItems hr {
+	margin: 0;
+	background-color: #e3ba31;
+	border: none;
+	height: 1px;
+	width: 20%;
+}

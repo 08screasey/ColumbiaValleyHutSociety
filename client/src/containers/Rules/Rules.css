@@ -1,0 +1,14 @@
+.Header-BG.Rules {
+	background-image: url("../../assets/snow 910.jpg");
+	background-position: center 80%;
+	background-attachment: scroll;
+	height: 500px;
+	position: fixed;
+	top: 0;
+	z-index: -1;
+}
+
+.RulesContainer {
+	padding-top: 30px;
+	margin-top: 470px;
+}

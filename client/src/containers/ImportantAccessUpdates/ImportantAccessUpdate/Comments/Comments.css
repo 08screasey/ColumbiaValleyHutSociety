@@ -1,0 +1,12 @@
+
+
+.AddComment .Red:hover{
+color:grey;
+cursor: pointer
+}
+
+.Comment .btn-danger{
+	bottom:10px;
+	right:20px;
+	position:absolute;
+}

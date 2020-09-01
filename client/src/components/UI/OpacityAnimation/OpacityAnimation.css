@@ -1,0 +1,10 @@
+.OpacityAnimation {
+	opacity: 0;
+	transform: translateY(20px);
+}
+
+.OpacityAnimation.Visible {
+	transition: 1s;
+	opacity: 1;
+	transform: translateY(0px);
+}

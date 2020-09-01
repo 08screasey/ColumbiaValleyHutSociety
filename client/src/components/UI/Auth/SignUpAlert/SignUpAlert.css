@@ -1,0 +1,47 @@
+.SignUpAlert{
+	position:fixed;
+	top:10%;
+	left:10%;
+	width:80%;
+	background-color: hsl(148.1,75.3%,98.9%);
+	border-radius: 10px;
+	text-align:left;
+	padding:15px 40px;
+	z-index:101;
+	overflow: hidden;
+	overflow-wrap: normal;
+}
+
+.SignUpAlert svg{
+position:absolute;
+top:10px;
+right:10px;
+color:hsl(0,100%,62.4%);
+}
+
+.SignUpAnimation-enter{
+opacity:0;
+transform: scale(0.8);
+}
+.SignUpAnimation-enter-active{
+	transition: 0.8s;
+	opacity:1;
+	transform: scale(1);
+}
+.SignUpAnimation-enter-done{
+	opacity:1;
+	transform: scale(1);
+}
+.SignUpAnimation-exit{
+opacity:1;
+transform: scale(1);
+}
+.SignUpAnimation-exit-active{
+	transition: 0.2s;
+	opacity:0;
+	transform: scale(0.8);
+}
+.SignUpAnimation-exit-done{
+	opacity:0;
+	transform: scale(0.8);
+}

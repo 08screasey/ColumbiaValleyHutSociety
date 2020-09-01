@@ -1,0 +1,58 @@
+.Jumbo {
+	background-image: url(../../assets/HutSociety_JumboHutHike.jpg);
+}
+.Olive {
+	background-image: url(../../assets/HutSociety_LakeHangingGlacier.jpg);
+}
+.David {
+	background-image: url(../../assets/HutSociety_DavidWhite2.jpg);
+}
+.Kingsbury {
+	background-image: url(../../assets/HutSociety_heliHikingPurcells.jpg);
+}
+.McMurdo {
+	background-image: url(../../assets/HutSociety_McMurdo5.jpg);
+}
+
+.Hut h3 {
+	position: absolute;
+	top: 200px;
+	display: block;
+	text-align: center;
+	width: 100%;
+}
+
+.Hut {
+	padding-top: 20px;
+}
+
+.Hut ul {
+	list-style: none;
+	position: relative;
+	z-index: 2;
+	padding: 40px 0px;
+}
+
+.Hut-Facts {
+	background-image: url(../../assets/snow 29.jpg);
+	background-position: center bottom;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0 -15px;
+	padding: 0 15px;
+}
+.Hut-Facts svg {
+	fill: white;
+}
+
+.Hut-Facts .col-6::before {
+	content: "";
+	background: rgba(0, 0, 0, 0.7);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+}
