@@ -24,12 +24,12 @@ sgMail.setApiKey(
 	process.env.SENDGRID_API_KEY
 );
 
-app.use("/users", require("./routes/users"));
-app.use("/bookings", require("./routes/bookings"));
-app.use("/news", require("./routes/news"));
-app.use("/huts", require("./routes/huts"));
-app.use("/comments", require("./routes/comments"));
-app.use("/contact", require('./routes/contact'));
+app.use("/api/users", require("./routes/users"));
+app.use("/api/bookings", require("./routes/bookings"));
+app.use("/api/news", require("./routes/news"));
+app.use("/api/huts", require("./routes/huts"));
+app.use("/api/comments", require("./routes/comments"));
+app.use("/api/contact", require('./routes/contact'));
 
 const PORT = process.env.PORT || 8000
 
