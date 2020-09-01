@@ -17,7 +17,7 @@ const HomeAccessUpdate = (props) => {
 					</Link>
 				</div>
 			</li>
-			<hr />
+			<hr className="mt-3 mb-0"/>
 		</div>
 	);
 };

@@ -82,7 +82,7 @@ const ImportantAccessUpdate = (props) => {
 	}
 
 	return (<div style={{"paddingTop":"100px"}} className="pb-4 Grey-BG">
-		<div className="w-75 mx-auto mt-3 mb-5" style={{width:"90%", "max-width":"800px"}}>
+		<div className=" mx-auto mt-3 mb-5" style={{width:"90%", "max-width":"800px"}}>
 		{ props.admin ? <div className="w-100 d-flex justify-content-end mb-3">
 		{adminEdit ? <Modal big closeModal={()=>{
 			setAdminEdit(false);
@@ -127,8 +127,8 @@ const ImportantAccessUpdate = (props) => {
 		</div> : null}
 		<h3 className="DarkBlue">{article.header}</h3>
 		
-		<small>{new Date(article.date).toLocaleTimeString()}</small>
-		<div className="px-5 py-3">
+		<small>{new Date(article.date).toLocaleDateString()}</small>
+		<div className="py-0" style={{wordBreak:"break-all"}}>
 		{article.content.split(/\n/).map((paragraph, key)=>{
 			const classes = ["mb-0"];
 			if(paragraph[0]===`~`){

@@ -24,7 +24,7 @@ const HomeAccessUpdates = (props) => {
 			<h2 className="DarkBlue Font1 TextOutline py-4">
 				Important Access Updates
 			</h2>
-			<ul className="HomeAccessUpdates p-3 row Raised mx-auto mt-2 mb-5 position-relative" style={{width:"90%", "max-width": "800px"}}>
+			<ul className="HomeAccessUpdates p-2 row Raised mx-auto mt-2 mb-5 position-relative" style={{width:"96%", "max-width": "800px"}}>
 				
 				{newestUpdates}
 			</ul>

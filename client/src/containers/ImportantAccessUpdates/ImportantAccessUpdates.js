@@ -23,7 +23,7 @@ const ImportantAccessUpdates = (props) => {
 					return (
 						<React.Fragment>
 							<div className="Header-BG Updates"></div>
-							<div className="UpdateContainer container-fluid Grey-BG pb-5">
+							<div className="UpdateContainer Grey-BG pb-5">
 								<HomeAccessUpdates quantity="8"/>
 								{props.admin ? <button onClick={()=>props.history.push('/updates/create')} className="AddButton Bungee DarkBlue Grey-BG Button">Add New Update</button>:null}
 							</div>

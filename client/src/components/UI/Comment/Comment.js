@@ -22,7 +22,7 @@ const Comment = (props) => {
 		<div className="Comment my-2 position-relative">
 			{hyperlink}
 			
-			<div className="CommentContent position-relative rounded py-3 px-3 DarkGrey-BG">
+			<div className="CommentContent position-relative rounded py-2 px-2 DarkGrey-BG">
 				<h6 className="Font5 text-left m-1">
 					{props.comment.author}
 				</h6>

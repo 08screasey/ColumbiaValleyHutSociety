@@ -85,7 +85,7 @@ const Comments = (props) => {
 	}
 
 	return (
-		<div className="p-3 Raised w-75 text-left rounded m-auto">
+		<div className="Raised text-left rounded m-auto" style={{width:"95%", maxWidth:"800px", padding:"20px 5%"}}>
 			{!!props.commentAdded ? (
 				<Modal
 					small
