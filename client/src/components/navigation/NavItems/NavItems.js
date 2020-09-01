@@ -30,7 +30,7 @@ if(props.admin){
 					{ link: "/huts/jumbo", name: "Jumbo Pass Cabin" },
 					{ link: "/huts/olive", name: "Olive Hut" },
 					{ link: "/huts/kingsbury", name: "Kingsbury Pass Cabin" },
-					{ link: "/huts/davidWhite", name: "David White Cabin" },
+					{ link: "/huts/david-white", name: "David White Cabin" },
 					{ link: "/huts/mcmurdo", name: "McMurdo Cabin" },
 				]}
 			>

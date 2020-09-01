@@ -81,40 +81,9 @@ const Footer = () => {
 								</Link>
 							</li>
 							<li>
-								<Link to="/huts/david_white">
+								<Link to="/huts/david-white">
 									<i className="fa fa-angle-double-right"></i>
 									David White Cabin
-								</Link>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div className="row">
-					<div className="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
-						<ul className="list-unstyled list-inline social text-center">
-							<li className="list-inline-item">
-								<Link to="/">
-									<i className="fa fa-facebook"></i>
-								</Link>
-							</li>
-							<li className="list-inline-item">
-								<Link to="/">
-									<i className="fa fa-twitter"></i>
-								</Link>
-							</li>
-							<li className="list-inline-item">
-								<Link to="/">
-									<i className="fa fa-instagram"></i>
-								</Link>
-							</li>
-							<li className="list-inline-item">
-								<Link to="/">
-									<i className="fa fa-google-plus"></i>
-								</Link>
-							</li>
-							<li className="list-inline-item">
-								<Link to="/">
-									<i className="fa fa-envelope"></i>
 								</Link>
 							</li>
 						</ul>

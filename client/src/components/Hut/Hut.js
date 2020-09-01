@@ -47,7 +47,7 @@ const Hut = (props) => {
 				<h3 className="Font0 Grey">{props.hut.name}</h3>
 				<div className="container-fluid">
 					<div className="row">
-						<div className="col-lg-3 order-md-1 order-2">
+						<div className="col-lg-4 col-xl-3 order-md-1 order-2">
 							<OpacityAnimation classes="my-3">
 								<h4 className="Font3 DarkBlue mb-4 TextOutline">
 									Extra Tools
@@ -107,7 +107,7 @@ const Hut = (props) => {
 								)}
 							</div>
 						</div>
-						<div className="col-lg-6 order-md-2 order-1">
+						<div className="col-lg-8 col-xl-6 order-md-2 order-1">
 							<h4 className="DarkBlue Font0 my-3 TextOutline">
 								Stats
 							</h4>
@@ -124,7 +124,7 @@ const Hut = (props) => {
 								prohibited={props.hut.prohibited}
 							/>
 						</div>
-						<div className="col-lg-3 order-md-3 order-3 mb-4">
+						<div className="col-xl-3 order-md-3 order-3 mb-4">
 							<LatestAccessUpdates />
 						</div>
 					</div>
