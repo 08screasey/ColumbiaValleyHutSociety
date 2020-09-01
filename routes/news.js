@@ -2,9 +2,9 @@ const express = require("express");
 const router = express.Router();
 const auth = require("../middleware/auth");
 const admin = require("../middleware/admin");
-const News = require("../models/News.model");
-const Comment = require("../models/Comment.model");
-const User = require("../models/User.model");
+const News = require("../models/News.model.js");
+const Comment = require("../models/Comment.model.js");
+const User = require("../models/User.model.js");
 
 router.get("/", (req, res) => {
 	News.find()

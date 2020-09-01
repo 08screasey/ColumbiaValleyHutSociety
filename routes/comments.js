@@ -2,9 +2,9 @@ const express = require("express");
 const router = express.Router();
 const auth = require("../middleware/auth");
 const verifyUser = require("../middleware/VerifyUser");
-const Comment = require("../models/Comment.model");
-const User = require("../models/User.model");
-const News = require("../models/News.model");
+const Comment = require("../models/Comment.model.js");
+const User = require("../models/User.model.js");
+const News = require("../models/News.model.js");
 
 router.put("/:id", auth, verifyUser, (req, res) => {
 	Comment.create(
