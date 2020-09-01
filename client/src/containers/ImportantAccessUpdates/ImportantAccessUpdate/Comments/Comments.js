@@ -210,7 +210,7 @@ const Comments = (props) => {
 					</button>
 				)}
 			</form>
-			{addComment ? null : (
+			{addComment || !props.auth ? null : (
 							<button
 								className="Button DarkBlue-BG d-block mt-4 mb-3 mx-auto Bungee Grey"
 								type="button"
