@@ -10,6 +10,7 @@ const Moment = require("moment");
 const MomentRange = require("moment-range");
 const moment = MomentRange.extendMoment(Moment);
 const paypal = require("paypal-rest-sdk");
+const priceCalc = require("../utilityFunctions/priceCalc");
 const sgMail = require('@sendgrid/mail');
 
 paypal.configure({
@@ -41,14 +42,14 @@ router.post("/search", auth, (req, res) => {
 
 //admin route for deleting booking
 router.delete("/search/:id", auth, admin, (req, res) => {
-	Booking.findByIdAndRemove(req.params.id, (err, booking) => {
+	Booking.findById(req.params.id, (err, booking) => {
 		if (err) {
-			
 			res.status(500).send("Problem locating booking");
 		} else {
+			console.log(booking)
 			var data = {
 				amount: {
-					total: parseFloat(booking.price) * 0.8,
+					total: (parseFloat(booking.price) * 0.8).toFixed(2),
 					currency: "CAD",
 				},
 			};
@@ -57,7 +58,7 @@ router.delete("/search/:id", auth, admin, (req, res) => {
 				refund
 			) {
 				if (error) {
-					
+					res.status(501).send("Could Not process refund.")
 				} else {
 					
 					Hut.findOne({ name: booking.hut })
@@ -71,6 +72,7 @@ router.delete("/search/:id", auth, admin, (req, res) => {
 									hut.filledDates.pull(date);
 								});
 								hut.bookings.pull({ _id: booking._id });
+								booking.remove();
 								hut.save();
 								res.status(200).send(
 									"Booking successfully cancelled"
@@ -89,6 +91,7 @@ router.put("/search/:id/edit", auth, admin, (req, res) => {
 		if (err || !booking) {
 			res.status(404).send("Booking not found.");
 		} else {
+			console.log(booking)
 			Hut.findOne({ name: booking.hut }, (err, hut) => {
 				if (err || !hut) {
 					res.status(404).send("Hut not found.");
@@ -107,7 +110,7 @@ router.put("/search/:id/edit", auth, admin, (req, res) => {
 					if (flagged) {
 						res.status(401).send("Date has already been booked.");
 					} else {
-						
+						console.log(booking)
 						booking.dates.forEach((date) => {
 							hut.filledDates.pull(date);
 						});
@@ -115,17 +118,19 @@ router.put("/search/:id/edit", auth, admin, (req, res) => {
 						req.body.dates.forEach((date) => {
 							hut.filledDates.push(date);
 						});
-					
+						for (let key in req.body.userData) {
+						if (req.body.userData[key] !== booking.userData[key]) {
+							booking.userData[key] = req.body.userData[key];
+							}
+						}
+						booking.price = priceCalc(hut.price, req.body.dates);
+						console.log(booking)
 						booking.save();
 						hut.save();
 						res.status(200).send("Booking successfully updated");
 					}
 
-					for (let key in req.body.userData) {
-						if (req.body.userData[key] !== booking.userData[key]) {
-							booking.userData[key] = req.body.userData[key];
-						}
-					}
+					
 				}
 			});
 		}
@@ -185,13 +190,8 @@ router.post("/:hut", auth, verifyUser, (req, res) => {
 						"There was an issue creating your temporary booking"
 					);
 				} else {
-					let price = hut.price[0] * slicedDates.length;
-					//Iterate along the recorded prices.
-					if (hut.price.length > 1) {
-						price = slicedDates.reduce((acc, date, index) => {
-							return acc + hut.price[index];
-						}, 0);
-					}
+
+					let price = priceCalc(hut.price, slicedDates);
 
 					var create_payment_json = {
 						intent: "sale",
@@ -211,7 +211,7 @@ router.post("/:hut", auth, verifyUser, (req, res) => {
 										{
 											name: `${req.params.hut}: ${req.user.id}`,
 											sku: "item",
-											price: "" + price + ".00",
+											price: price,
 											currency: "CAD",
 											quantity: 1,
 										},
@@ -219,7 +219,7 @@ router.post("/:hut", auth, verifyUser, (req, res) => {
 								},
 								amount: {
 									currency: "CAD",
-									total: "" + price + ".00",
+									total: price ,
 								},
 								description: "This is the payment description.",
 							},
@@ -239,6 +239,7 @@ router.post("/:hut", auth, verifyUser, (req, res) => {
 									res.status(200).json({
 										name: hut.name,
 										dates: dates,
+										price:price,
 										paypalLink: payment.links[i].href,
 									});
 								}
@@ -284,13 +285,7 @@ router.post("/:hut/book", auth, verifyUser, (req, res) => {
 				"One or more of the selected dates has already been booked"
 			);
 		} else {
-			let price = hut.price[0] * slicedDates.length;
-			//Iterate along the recorded prices.
-			if (hut.price.length > 1) {
-				price = slicedDates.reduce((acc, date, index) => {
-					return acc + hut.price[index];
-				}, 0);
-			}
+			let price = priceCalc(hut.price, slicedDates)
 
 			const execute_payment_json = {
 				payer_id: req.body.paymentInfo.payerId,
@@ -298,7 +293,7 @@ router.post("/:hut/book", auth, verifyUser, (req, res) => {
 					{
 						amount: {
 							currency: "CAD",
-							total: "" + price + ".00",
+							total: price,
 						},
 					},
 				],

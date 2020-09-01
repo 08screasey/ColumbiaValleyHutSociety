@@ -29,6 +29,7 @@ app.use("/bookings", require("./routes/bookings"));
 app.use("/news", require("./routes/news"));
 app.use("/huts", require("./routes/huts"));
 app.use("/comments", require("./routes/comments"));
+app.use("/contact", require('./routes/contact'));
 
 const PORT = process.env.PORT || 8000
 
