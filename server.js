@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const sgMail = require('@sendgrid/mail');
+const path = require("path");
 const cors = require("cors");
 
 require('dotenv').config()
@@ -31,7 +32,14 @@ app.use("/api/huts", require("./routes/huts"));
 app.use("/api/comments", require("./routes/comments"));
 app.use("/api/contact", require('./routes/contact'));
 
-const PORT = process.env.PORT || 8000
+const PORT = process.env.PORT || 8000;
+
+if(process.env.NODE_ENV === "production"){
+	app.use(express.static('client/build'));
+	app.get("*", (req,res)=>{
+		res.sendFile(path.resolve(_dirname, "client", "build", "index.html"))
+	})
+}
 
 app.listen(PORT, process.env.IP, () => {
 	console.log("server up");
