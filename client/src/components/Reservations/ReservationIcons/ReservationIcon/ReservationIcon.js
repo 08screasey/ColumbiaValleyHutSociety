@@ -6,7 +6,7 @@ const ReservationIcon = (props) => {
 	const [inView, setInView] = useState(false);
 	let price = props.hut.price[0];
 	if(props.hut.price.length>1){
-		let sortedP = props.hut.price.sort((a,b)=>a-b);
+		let sortedP = props.hut.price.slice().sort((a,b)=>a-b);
 		price = `${sortedP[0]}/${sortedP[sortedP.length-1]}`
 	}
 	return (

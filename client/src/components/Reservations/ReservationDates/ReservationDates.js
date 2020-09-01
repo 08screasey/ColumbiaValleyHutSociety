@@ -160,15 +160,19 @@ const ReservationDates = (props) => {
 		let acc=0;
 		let prices = [];
 		let jsxObj = {};
+		console.log(cabinData);
+
 		if(cabinData.price.length>1){prices = cabinData.price}
-			else{
+			else{ 
 				for(let j=1; j<=quantity; j++){
 					prices.push(cabinData.price[0])
 				}
 			}
+			console.log(prices)
 		for(let i=1; i<=quantity; i++){
 			jsxObj[`Day ${i}`] = "$"+prices[i-1]
 			acc+= +prices[i-1];
+			console.log(jsxObj)
 		}
 		jsxObj["+13% Tax"] = "$"+(+acc*0.13).toFixed(2);
 		
