@@ -9,11 +9,8 @@ const HomeHutIcon = (props) => {
 	const handleWaypointEnter = () => {
 		setInView(true);
 	};
-	const handleWaypointLeave = () => {
-		setInView(false);
-	};
 	return (
-		<Waypoint onEnter={handleWaypointEnter} onLeave={handleWaypointLeave}>
+		<Waypoint onEnter={handleWaypointEnter} >
 			<div className="col-md-6 col-lg-4">
 				<div
 					className={

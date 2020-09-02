@@ -34,7 +34,7 @@ const HomeHutSummary = (props) => {
 					link="/huts/davidWhite"
 					imgPath={davidwhite}
 					cabin="David White Cabin"
-					content="This cabin requires some route finding to access in summer, as well as two creek crossings which can be challenging in high water conditions. It offers beautiful views across the basin to the Catamount Glacier, not to mention steep and deep tree skiing from the ridge above in winter."
+					content="This cabin requires some route finding to access in summer. It offers beautiful views across to the Catamount Glacier, as well as steep and deep tree skiing from the ridge above in Winter."
 				/>
 				<HomeHutIcon
 					link="/huts/mcmurdo"

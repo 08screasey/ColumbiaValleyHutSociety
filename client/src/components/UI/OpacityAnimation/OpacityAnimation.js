@@ -22,7 +22,7 @@ const OpacityAnimation = (props) => {
 	return (
 		<Waypoint
 			onEnter={() => setInView(true)}
-			onLeave={() => setInView(false)}
+			
 		>
 			<div onClick={props.clicked} className={props.classes}>
 				{children}

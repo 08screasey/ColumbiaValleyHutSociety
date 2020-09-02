@@ -1,8 +1,8 @@
 .Header-BG.Updates {
-	background-image: url("../../assets/snow 910.jpg");
-	background-position: center 80%;
+	background-image: url("../../assets/snow 4.jpg");
+	background-position: center 40%;
 	background-attachment: scroll;
-	height: 400px;
+	height: 500px;
 	position: fixed;
 	top: 0;
 	z-index: -1;
@@ -10,7 +10,7 @@
 
 .UpdateContainer {
 	padding-top: 40px;
-	margin-top: 400px;
+	margin-top: 500px;
 	position: relative;
 }
 

@@ -4,12 +4,15 @@ import OpacityAnimation from "../../UI/OpacityAnimation/OpacityAnimation";
 const HutAccess = (props) => {
 	const access = props.access.map((access, index) => {
 		return (
-			<OpacityAnimation key={index}>
-				<p className="P">{access}</p>
-			</OpacityAnimation>
+			
+				<p className="P" key={index}>{access}</p>
+			
 		);
 	});
-	return access;
+	return (<OpacityAnimation>
+	{access}
+	</OpacityAnimation>)
+	;
 };
 
 export default HutAccess;

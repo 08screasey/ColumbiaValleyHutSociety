@@ -63,11 +63,7 @@ const Gallery = (props) => {
 					onEnter={() => {
 						setInView(true);
 					}}
-					onLeave={() => {
-						if (!enlarged) {
-							setInView(false);
-						}
-					}}
+					
 				>
 					<div className="col-12 p-0 d-flex flex-wrap justify-content-center">
 						{imgElements}
