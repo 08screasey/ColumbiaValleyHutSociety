@@ -10,15 +10,15 @@ const AccountInfo = (props) => {
 
 	if(props.userData.reservations.length > 0){
 		reservations = props.userData.reservations.map((reservation, key)=>{
-			const classes = ["Raised", "px-4", "my-3", "Trip", "d-flex", "align-items-center"];
+			const classes = ["Raised", "px-2", "my-3", "Trip", "d-flex", "align-items-center"];
 			classes.push(reservation.hut)
 			return <li key={key} className={classes.join(" ")}>
 				<div className="row w-100 align-items-center">
-				<div className="col-5 col-md-6 pl-5">
-				<p className="m-3 Grey Font5 Bungee" ><strong className="Grey m-2">Check-in:</strong> {new Date(reservation.dates[0]).toLocaleDateString()}</p>
-				<p className="m-3 Grey Font5 Bungee" ><strong className="Grey m-2">Checkout:</strong> {addDays(reservation.dates[reservation.dates.length-1], 1)}</p>
+				<div className="col-5 col-md-6 " style={{paddingLeft:"3%"}}>
+				<p className="m-3 Grey Font5 Bungee w-100" ><strong className="Grey m-2">Check-in:</strong> {new Date(reservation.dates[0]).toLocaleDateString()}</p>
+				<p className="m-3 Grey Font5 Bungee w-100" ><strong className="Grey m-2">Checkout:</strong> {addDays(reservation.dates[reservation.dates.length-1], 1)}</p>
 				</div>
-				<div className="col-7 col-md-6 pl-0">
+				<div className="col-7 col-md-6 pl-2">
 				<h3 className="Grey text-center w-100 Font2" onClick={()=>props.history.push(`/huts/${reservation.hut}`)}>{reservation.hut.split('-').join(' ')}</h3>
 				</div></div>
 			</li>
@@ -26,7 +26,7 @@ const AccountInfo = (props) => {
 	}
 
 	return (
-		<div className="AccountInfo Grey-BG">
+		<div className="AccountInfo Grey-BG container-fluid">
 			<h2 className="TextOutline Orange Font1">
 				{props.userData.firstName} {props.userData.lastName}
 			</h2>
@@ -54,7 +54,7 @@ const AccountInfo = (props) => {
 					);
 				}) : <p className="Raised p-5">You do not have any comments on this account</p>}
 			</div>
-			<div className="AccountReservations p-2 text-left ">
+			<div className="AccountReservations py-2 text-left ">
 				<h3 className="Font2 DarkBlue my-3 TextOutline" style={{paddingLeft:"8%"}}>My Trips</h3>
 				<ul className="p-2" style={{"listStyle":"none"}}>
 				{reservations}
