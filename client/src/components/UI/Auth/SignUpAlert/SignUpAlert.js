@@ -7,10 +7,10 @@ import {connect} from 'react-redux';
 const SignUpAlert = (props) => {
 	return (
 		<div className="SignUpAlert">
-			<FontAwesomeIcon icon={faTimesCircle} onClick={props.closeAlert} className="red m-auto" size="1x"/>
-			<h1 className="Green Font5 my-3">Welcome, {props.firstName}!</h1>
-			<p className="Font6 mb-3">In order to get the most out of your account please click the link in the verification email sent to {props.email}.</p>
-			<small className="Green mb-3 d-block text-center">Didn't get one? <u><span onClick={props.resend} style={{cursor:"pointer"}}>Click here to re-send activation email.</span></u></small>
+			<FontAwesomeIcon icon={faTimesCircle} onClick={props.closeAlert} className="BrightBlue m-auto" size="1x"/>
+			<h1 className="DarkBlue Font5 my-3">Welcome, {props.firstName}!</h1>
+			<p className="Font5 mb-3">In order to get the most out of your account please click the link in the verification email sent to {props.email}.</p>
+			<small className="DarkBlue mb-3 Font5 d-block text-center">Didn't get one? <u><strong onClick={props.resend} style={{cursor:"pointer"}}>Click here to re-send activation email.</strong></u></small>
 		</div>
 		)
 }

@@ -196,9 +196,9 @@ router.post("/:hut", auth, verifyUser, (req, res) => {
 						},
 						redirect_urls: {
 							return_url:
-								"http://localhost:3000/reservations/success",
+								"http://powerful-oasis-65796.herokuapp.com/reservations/success",
 							cancel_url:
-								"http://localhost:3000/reservations/cancel",
+								"http://powerful-oasis-65796.herokuapp.com/reservations/cancel",
 						},
 						transactions: [
 							{

@@ -8,13 +8,13 @@ const sgMail = require('@sendgrid/mail');
 const verifyUser = require('../middleware/VerifyUser');
 
 const sendVerificationEmail = (user) => {
-	sgMail.setApiKey("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");
+	sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 						const msg = {
 						  to: user.email,
 						  from: 'columbiavalleyhutsociety@gmail.com',
 						  template_id: "d-273e372d2ab94ebbb6695a80af6949f4",
 						  dynamic_template_data:{
-						  	link:`http://localhost:3000/verify/${user.password}`,
+						  	link:`http://powerful-oasis-65796.herokuapp.com/verify/${user.password}`,
 						  	firstName:user.firstName
 						  }
 						};
@@ -80,7 +80,7 @@ router.post("/register", (req, res) => {
 							}
 						);
 
-						}).catch(err=>{
+						}, err=>{
 							res.status(500).send("Unable to send verification email.")
 						})
 					

@@ -3,20 +3,20 @@
 	top:10%;
 	left:10%;
 	width:80%;
-	background-color: hsl(148.1,75.3%,98.9%);
+	background:hsl(190.8, 35.4%, 97.6%);
 	border-radius: 10px;
 	text-align:left;
-	padding:15px 40px;
+	padding:15px 30px;
 	z-index:101;
 	overflow: hidden;
 	overflow-wrap: normal;
+	border: 2px solid hsl(190.8, 55.4%, 45.6%);
 }
 
 .SignUpAlert svg{
 position:absolute;
 top:10px;
 right:10px;
-color:hsl(0,100%,62.4%);
 }
 
 .SignUpAnimation-enter{
