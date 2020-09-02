@@ -22,7 +22,7 @@ img.Enlarge-Image {
 	width: 90%;
 	max-width: 600px;
 	height: auto !important;
-	top: 30%;
+	top: calc(25%);
 	z-index: 301;
 	object-fit: contain;
 }
