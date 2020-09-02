@@ -2,7 +2,7 @@ import React from 'react';
 
 const HomeAbout = (props) => {
 	return (<div className="HomeAbout m-auto my-5 pt-3" style={{width:"90%", maxWidth:"750px"}}>
-	<h2 className="Font1 DarkBlue">About The CVHS</h2>
+	<h2 className="Font1 DarkBlue TextOutline">About The CVHS</h2>
 	<p className="pt-2">The Columbia Valley Hut Society is a non-profit organization
 	 established in 1983 by a small group of friends with a passion
 	  for the backcountry. Over the past thirty years Society

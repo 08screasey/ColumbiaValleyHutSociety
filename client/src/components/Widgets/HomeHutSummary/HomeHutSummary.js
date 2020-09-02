@@ -16,7 +16,7 @@ const HomeHutSummary = (props) => {
 					link="/huts/jumbo"
 					imgPath={jumbo}
 					cabin="Jumbo Pass Cabin"
-					content="An East & West Kootenay favourite, the Jumbo Hut is a great backcountry experience at the height of the Purcells."
+					content="An East & West Kootenay favourite, the Jumbo Hut is a great backcountry experience at the height of the Purcells. Marvel at the 360 degree panoramas visible from just behind the cabin."
 				/>
 				<HomeHutIcon
 					link="/huts/olive"

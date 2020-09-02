@@ -35,7 +35,7 @@ const HomeHutIcon = (props) => {
 						<Hr />
 					</div>
 					<div className="HomeHutIconContent">
-						<p className="Grey text-left Font5 p-4">
+						<p className="Grey text-left Font5 p-4 mb-0">
 							{props.content}
 						</p>
 					</div>
