@@ -6,7 +6,7 @@ import "./ReservationInfo.css";
 const ReservationInfo = (props) => {
 	useEffect(() => {
 		props.onResetBooking();
-	}, []);
+	}, []); // eslint-disable-line react-hooks/exhaustive-deps
 
 	const handleButtonClick = () => {
 		if (props.auth) {

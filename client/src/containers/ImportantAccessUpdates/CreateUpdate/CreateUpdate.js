@@ -4,7 +4,7 @@ import checkValidity from '../../../Utility Functions/Validity Checker';
 import checkForm from '../../../Utility Functions/Form Check';
 import * as actions from '../../../store/actions/index';
 import Modal from '../../../components/UI/Modal/Modal';
-import { faCheckCircle, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
+import { faCheckCircle} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ErrorAlert from '../../../components/UI/ErrorAlert/ErrorAlert';
 import './CreateUpdate.css';

@@ -1,7 +1,6 @@
 import React from "react";
 import HomeAccessUpdate from "./HomeAccessUpdate/HomeAccessUpdate";
 import "./HomeAccessUpdates.css";
-import * as actions from "../../../store/actions/index";
 import { connect } from "react-redux";
 
 const HomeAccessUpdates = (props) => {

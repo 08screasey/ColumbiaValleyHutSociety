@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import Timer from "../../../components/UI/Timer/Timer";
@@ -119,7 +119,6 @@ const handleInputChange = (e, identifier) => {
 						<div className="FormGroup">
 							<label>Name:</label>
 							<input
-								className="FormControl"
 								type="text"
 								onChange={(e) => handleInputChange(e, "name")}
 								value={form.name.value}
@@ -142,7 +141,6 @@ const handleInputChange = (e, identifier) => {
 							<label>Email:</label>
 							<input
 								type="text"
-								className="FormControl"
 								onChange={(e) => handleInputChange(e, "email")}
 								value={form.email.value}
 								placeholder={"Email"}
@@ -164,7 +162,6 @@ const handleInputChange = (e, identifier) => {
 							<label>Phone:</label>
 							<input
 								type="text"
-								className="FormControl"
 								onChange={(e) => handleInputChange(e, "phone")}
 								value={form.phone.value}
 								placeholder={"Phone Number"}

@@ -22,6 +22,7 @@ const Image = (props) => {
 				src={props.source}
 				className={enlarged ? "Enlarge-Image" : null}
 				onClick={() => clickHandler()}
+				alt={"Gallery Icon"}
 			/>
 		</React.Fragment>
 	);

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import "./Reservations.css";
 import { connect } from "react-redux";
 import ReservationInfo from "../../components/Reservations/ReservationInfo/ReservationInfo";
@@ -7,7 +7,7 @@ import ReservationDates from "../../components/Reservations/ReservationDates/Res
 import ReservationBook from "./ReservationBook/ReservationBook";
 import PaymentSuccess from "./ReservationBook/PaymentSuccess/PaymentSuccess";
 import LatestAccessUpdates from "../../components/Widgets/LatestAccessUpdates/LatestAccessUpdates";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 const Reservations = (props) => {
 	useEffect(() => {

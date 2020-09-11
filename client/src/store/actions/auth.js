@@ -10,9 +10,7 @@ export const auth = (userData, signUp) => {
 		}
 		axios
 			.post(url, userData)
-			.then((res) => {
-				const expDate = new Date(new Date().getTime() + res.expTime);
-				localStorage.setItem("userId", res.data.userData._id);
+			.then((res) => {localStorage.setItem("userId", res.data.userData._id);
 				localStorage.setItem("token", res.data.token);
 				localStorage.setItem("expDate", new Date(Date.now() + 3600000));
 				dispatch(authSuccess(res.data));
@@ -31,7 +29,6 @@ export const auth = (userData, signUp) => {
 export const initAuthCheck = () => {
 	return (dispatch) => {
 		const token = localStorage.getItem("token");
-		const id = localStorage.getItem("userId");
 		const expDate = localStorage.getItem("expDate");
 		if (!token || Date.parse(expDate) < Date.parse(new Date())) {
 			dispatch(logout());

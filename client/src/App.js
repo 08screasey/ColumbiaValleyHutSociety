@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import logo from "./logo.svg";
+import React, { useEffect } from "react";
 import "./App.css";
 import { Route, Switch, Redirect } from "react-router-dom";
 import Layout from "./containers/Layout/Layout";
@@ -19,10 +18,12 @@ import { connect } from "react-redux";
 import * as actions from "./store/actions/index";
 
 function App(props) {
+
   useEffect(() => {
     props.onInitAuthCheck();
     props.onFetchNews();
-  }, []);
+    // eslint-disable-next-line
+  }, []); 
 
 
   return (

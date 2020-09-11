@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import Hamburger from "../Hamburger/Hamburger";
 import NavItems from "../NavItems/NavItems";
-import Logo from "../../UI/Logo/Logo";
 
 import "./Toolbar.css";
 

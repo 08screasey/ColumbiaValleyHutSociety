@@ -12,6 +12,7 @@ const Verify = (props) => {
 	const hash = props.location.pathname.split('/verify/')[1];
 
 	useEffect(()=>
+		//eslint-disable-next-line
 		props.onVerifyEmail(hash),[])
 
 	return (
@@ -40,7 +41,6 @@ const mapDispatchToProps = dispatch => {
 const mapStateToProps = state => {
 	return {
 		auth: state.auth.token !== null,
-		loading:state.auth.loading,
 		verified:state.auth.userData.active,
 		error:state.auth.verificationError,
 		loading:state.auth.loading

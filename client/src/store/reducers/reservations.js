@@ -43,7 +43,6 @@ const reducer = (state = initialState, action) => {
 				...state,
 				fetchError: null,
 				loading: true,
-				booking: { bookingStart: null, duration: null },
 				selectError: null,
 				booking: {
 					hut: null,

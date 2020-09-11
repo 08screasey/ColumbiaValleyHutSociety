@@ -56,7 +56,7 @@ const Contact = (props) => {
 		newForm.email.touched = true;
 		newForm.email.valid = true;
 		setForm(newForm);
-	}, [props.auth]);
+	}, [props]); // eslint-disable-line react-hooks/exhaustive-deps
 
 	const handleInputChange = (e, identifier) => {
 		const newForm = { ...form };
@@ -152,7 +152,6 @@ const Contact = (props) => {
 				<form onSubmit={handleSubmit}>
 					<div className="FormGroup">
 						<input
-							className="FormControl"
 							type="text"
 							onChange={(e) => handleInputChange(e, "name")}
 							value={form.name.value}
@@ -172,7 +171,7 @@ const Contact = (props) => {
 					</div>
 					<div className="FormGroup">
 						<input
-							className="FormControl"
+							
 							type="text"
 							onChange={(e) => handleInputChange(e, "email")}
 							value={form.email.value}
@@ -193,7 +192,6 @@ const Contact = (props) => {
 					<div className="FormGroup">
 						<input
 							type="text"
-							className="FormControl"
 							onChange={(e) => handleInputChange(e, "subject")}
 							value={form.subject.value}
 							placeholder={"Subject"}
@@ -214,7 +212,6 @@ const Contact = (props) => {
 						<textarea
 							rows="5"
 							type="text"
-							className="FormControl"
 							onChange={(e) => handleInputChange(e, "content")}
 							value={form.content.value}
 							placeholder={"Your Message"}

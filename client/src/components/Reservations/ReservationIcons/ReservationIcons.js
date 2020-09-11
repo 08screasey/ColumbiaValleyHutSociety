@@ -1,9 +1,7 @@
 import React from "react";
 import { HUT_DATA } from "../../../Data/HUT_DATA";
 import ReservationIcon from "./ReservationIcon/ReservationIcon";
-import { ReactComponent as Arrow } from "../../../assets/SVG/arrow.svg";
 import { withRouter } from "react-router-dom";
-import Waypoint from "react-waypoint";
 import "./ReservationIcons.css";
 
 const ReservationIcons = (props) => {

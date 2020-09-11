@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./Auth.css";
-import { Redirect } from "react-router-dom";
 import ErrorAlert from "../../components/UI/ErrorAlert/ErrorAlert";
 import Loader from "../../components/UI/Loader/Loader";
 import { connect } from "react-redux";
+import checkValidity from '../../Utility Functions/Validity Checker';
 import formChecker from '../../Utility Functions/Form Check';
 import Modal from '../../components/UI/Modal/Modal';
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
@@ -13,7 +13,7 @@ import * as actions from "../../store/actions/index";
 const Auth = (props) => {
 	const [signUp, setSignUp] = useState(false);
 
-	useEffect(()=>{ if(props.auth){props.history.push('/')}}, [])
+	useEffect(()=>{ if(props.auth){props.history.push('/')}}, []) // eslint-disable-line react-hooks/exhaustive-deps
 
 	const [form, setForm] = useState({
 		email: {
@@ -72,31 +72,6 @@ const Auth = (props) => {
 		setValidForm(false);
 	};
 
-	const checkValidity = (rules, target) => {
-		if (rules.required && target.value.trim().length < 1) {
-			return false;
-		}
-		if (rules.minLength && target.value.trim().length < rules.minLength) {
-			return false;
-		}
-		if (rules.passwordMatch && target.value !== form.password.value) {
-			return false;
-		}
-		if (rules.name && target.value.split("").length < 1) {
-			return false;
-		}
-		if (rules.phone && !target.value.match(/^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/)){
-			return false
-		}
-		if (
-			rules.email &&
-			!target.value.match(/(?!.*\.\.)(^[^\.][^@\s]+@[^@\s]+\.[^@\s\.]+$)/)
-		) {
-			return false;
-		} else {
-			return true;
-		}
-	};
 
 	const handleInputChange = (e, identifier) => {
 		const newForm = { ...form };

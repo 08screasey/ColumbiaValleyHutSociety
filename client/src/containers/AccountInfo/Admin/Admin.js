@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import { connect } from "react-redux";
 import {Route, Switch} from 'react-router-dom';
 import * as actions from '../../../store/actions/index';
-import AdminUsers from './AdminUsers/AdminUsers';
 import EditReservation from './EditReservation/EditReservation';
 import DeleteReservation from './DeleteReservation/DeleteReservation';
 import SearchResult from '../../../components/Admin/Search Result/Search Result';

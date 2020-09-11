@@ -12,7 +12,6 @@ import Modal from '../../../components/UI/Modal/Modal';
 import Loader from "../../../components/UI/Loader/Loader";
 import { HUT_DATA } from "../../../Data/HUT_DATA";
 import ObjectTable from "../../../components/UI/ObjectTable/ObjectTable";
-import { Redirect } from "react-router-dom";
 const moment = extendMoment(Moment);
 
 const days_between = (date1, date2) => {
@@ -37,16 +36,17 @@ const ReservationDates = (props) => {
 		}
 
 		props.onFetchAvailableDates(cabin, props.token);
+		//eslint-disable-next-line
 	}, []);
 
 	useEffect(() => {
 		if (props.currentBooking) {
 			props.history.push(props.match.url + "/book");
 		}
-	}, [props.currentBooking]);
+	}, [props]);
 
 	const cabin = props.match.params.hut;
-	const cabinData = HUT_DATA.find((hut) => hut.dbName == cabin);
+	const cabinData = HUT_DATA.find((hut) => hut.dbName === cabin);
 
 	const handleDayClick = (day, { disabled, unavailable, editing }) => {
 		setError(null);

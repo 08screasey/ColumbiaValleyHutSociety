@@ -13,14 +13,11 @@ const checkValidity = (rules, target, form) => {
 		}
 		if (rules.maxLength && target.value.trim().length > rules.maxLength){
 			return false
-		}
+		}//eslint-disable-next-line
 		if (rules.phone && !target.value.match(/^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/)){
 			return false
-		}
-		if (
-			rules.email &&
-			!target.value.match(/(?!.*\.\.)(^[^\.][^@\s]+@[^@\s]+\.[^@\s\.]+$)/)
-		) {
+		}//eslint-disable-next-line
+		if (rules.email && !target.value.match(/(?!.*\.\.)(^[^\.][^@\s]+@[^@\s]+\.[^@\s\.]+$)/)) {
 			return false;
 		} else {
 			return true;

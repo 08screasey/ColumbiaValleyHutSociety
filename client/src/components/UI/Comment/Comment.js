@@ -30,7 +30,7 @@ const Comment = (props) => {
 				<small className="Font6 CommentDate">
 				{new Date(props.comment.date).toLocaleDateString()}
 			</small>
-			{props.userId && props.userId === props.comment.userId || props.admin ? (
+			{props.userId && props.userId === (props.comment.userId || props.admin) ? (
 				<span
 					onClick={props.clicked}
 					className="Red Font5 CommentDelete"

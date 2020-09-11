@@ -1,5 +1,4 @@
 import React from 'react';
-import {connect} from 'react-redux';
 
 const ObjectTable = (props) => {
 	return (<div className="w-100 pt-2">

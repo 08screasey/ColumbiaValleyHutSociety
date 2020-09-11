@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
-import SearchResult from '../../../../components/Admin/Search Result/Search Result';
 import * as actions from '../../../../store/actions/index';
 import { faCheckCircle} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,7 +15,7 @@ const DeleteReservation = (props) => {
 		return props.queryResults.filter((result) => result._id === id)[0]
 	}
 
-	const [bookingToDelete, setBookingToDelete] = useState(findOne(props.match.params.id))
+	const [bookingToDelete] = useState(findOne(props.match.params.id))
 
 	if(!bookingToDelete){
 		return <Redirect to="/" />

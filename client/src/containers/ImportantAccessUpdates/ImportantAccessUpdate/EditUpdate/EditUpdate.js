@@ -1,7 +1,6 @@
 import React from "react";
-import { connect } from "react-redux";
 import Modal from '../../../../components/UI/Modal/Modal';
-import { faCheckCircle, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
+import { faCheckCircle} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const EditUpdate = (props) => {

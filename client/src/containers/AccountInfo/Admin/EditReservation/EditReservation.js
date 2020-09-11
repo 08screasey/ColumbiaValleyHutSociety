@@ -1,17 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
-import SearchResult from '../../../../components/Admin/Search Result/Search Result';
 import * as actions from '../../../../store/actions/index';
 import { faCheckCircle} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Modal from '../../../../components/UI/Modal/Modal';
 import validityChecker from '../../../../Utility Functions/Validity Checker';
-import formChecker from '../../../../Utility Functions/Form Check';
 import BookingReview from '../../../../components/Reservations/BookingReview/BookingReview';
 import moment from 'moment';
 import ReservationDates from '../../../../components/Reservations/ReservationDates/ReservationDates';
-import {addDays} from '../../../../Utility Functions/DateFunctions';
 import ErrorAlert from '../../../../components/UI/ErrorAlert/ErrorAlert';
 
 const EditReservation = (props) => {
@@ -20,7 +17,7 @@ const EditReservation = (props) => {
 		return props.queryResults.filter((result) => result._id === id)[0]
 	}
 
-	const [bookingToEdit, setBookingToEdit] = useState(findOne(props.match.params.id))
+	const [bookingToEdit] = useState(findOne(props.match.params.id))
 	
 
 	
@@ -44,7 +41,7 @@ const EditReservation = (props) => {
 				}
 	})
 
-	const [validForm, setValidForm] = useState(false);
+	//const [validForm, setValidForm] = useState(false);
 	
 	const [dates,setDates] = useState(null);
 	const [proceed, setProceed] = useState(false);
@@ -57,7 +54,8 @@ const EditReservation = (props) => {
 		}
 		setForm(newForm);
 		setDates(bookingToEdit.dates)}}
-		,[])
+		//eslint-disable-next-line
+		,[]) 
 
 
 		if(!bookingToEdit){
@@ -73,7 +71,7 @@ const EditReservation = (props) => {
 			newForm[identifier]
 		);
 		setForm(newForm);
-		setValidForm(formChecker(form))
+		//setValidForm(formChecker(form))
 	};
 		const handleUpdateDates = (d1, d2) => {
 			const dateRange = moment.range(d1,d2)
@@ -114,7 +112,6 @@ const EditReservation = (props) => {
 						<div className="FormGroup">
 							<label>Name:</label>
 							<input
-								className="FormControl"
 								type="text"
 								onChange={(e) => handleInputChange(e, "name")}
 								value={form.name.value}
@@ -137,7 +134,6 @@ const EditReservation = (props) => {
 							<label>Email:</label>
 							<input
 								type="text"
-								className="FormControl"
 								onChange={(e) => handleInputChange(e, "email")}
 								value={form.email.value}
 								placeholder={"Email"}
@@ -159,7 +155,6 @@ const EditReservation = (props) => {
 							<label>Phone:</label>
 							<input
 								type="text"
-								className="FormControl"
 								onChange={(e) => handleInputChange(e, "mobile")}
 								value={form.mobile.value}
 								placeholder={"Phone Number"}

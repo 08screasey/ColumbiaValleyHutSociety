@@ -1,5 +1,4 @@
 import React from "react";
-import OpacityAnimation from "../../UI/OpacityAnimation/OpacityAnimation";
 import "./HutProvisions.css";
 import { ReactComponent as Bedding } from "../../../assets/SVG/bedding.svg";
 import { ReactComponent as Mattress } from "../../../assets/SVG/mattress.svg";

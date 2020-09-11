@@ -153,7 +153,7 @@ export const bookingSearch = (type, query, token) => {
 				if(err.response){
 					error = {status: err.response.status, message:err.response.data}
 				}
-			dispatch(bookingSearchFail(err))
+			dispatch(bookingSearchFail(error))
 		})
 	}
 }
@@ -181,7 +181,7 @@ export const deleteReservation = (id, token) => {
 				if(err.response){
 					error = {status: err.response.status, message:err.response.data}
 				}
-			dispatch(deleteSearchFail(err))
+			dispatch(deleteSearchFail(error))
 		})
 	}
 }
@@ -207,7 +207,7 @@ export const editReservation = (id, data, token) => {
 				if(err.response){
 					error = {status: err.response.status, message:err.response.data}
 				}
-			dispatch(editSearchFail(err))
+			dispatch(editSearchFail(error))
 		})	}
 }
 

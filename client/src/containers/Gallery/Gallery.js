@@ -22,11 +22,7 @@ import Image from "./Image/Image";
 
 const Gallery = (props) => {
 	const [inView, setInView] = useState(false);
-	const [enlarged, setEnlarged] = useState(false);
-
-	const EnlargedHandler = (bool) => {
-		setEnlarged(bool);
-	};
+	
 
 	const images = [
 		Image1,
@@ -51,7 +47,6 @@ const Gallery = (props) => {
 			<Image
 				source={jpg}
 				key={index}
-				onEnlarge={(bool) => EnlargedHandler(bool)}
 			/>
 		);
 	});

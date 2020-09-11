@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import HomeHutIcon from "./HomeHutIcon/HomeHutIcon";
 import "./HomeHutSummary.css";
 import jumbo from "../../../assets/Jumbo Pass Cabin.jpg";
@@ -33,6 +33,7 @@ const HomeHutSummary = (props) => {
 				<HomeHutIcon
 					link="/huts/davidWhite"
 					imgPath={davidwhite}
+					styles={{"object-position":"center top", "object-fit":"cover"}}
 					cabin="David White Cabin"
 					content="This cabin requires some route finding to access in summer. It offers beautiful views across to the Catamount Glacier, as well as steep and deep tree skiing from the ridge above in Winter."
 				/>

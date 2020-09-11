@@ -22,7 +22,7 @@ const ImportantAccessUpdate = (props) => {
 
 
 
-	const [id, newId] = useState(props.location.pathname.split('/')[2]);
+	const id = props.location.pathname.split('/')[2];
 
 	const [article, updateArticle] = useState(findById(id, props.news))
 
@@ -75,7 +75,7 @@ const ImportantAccessUpdate = (props) => {
 		if(!newArticle){
 			props.history.push('/updates')
 		}
-	}, [props.news])
+	}, [props.news, id, props.history])
 
 	if(!article){
 		return <Redirect to="/updates"/>

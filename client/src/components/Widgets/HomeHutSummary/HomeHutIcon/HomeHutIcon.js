@@ -18,12 +18,14 @@ const HomeHutIcon = (props) => {
 							? "HomeHutIcon DarkBlue-BG Enter"
 							: "HomeHutIcon Exit"
 					}
+
 				>
 					<Link to={props.link}>
 						<img
 							src={props.imgPath}
 							alt=""
 							className="HomeHutIconImg"
+							style={props.styles}
 						/>
 						<div className="HomeHutIconHeader d-flex align-items-center justify-content-end">
 							<h3 className="Font4 Grey text-right">

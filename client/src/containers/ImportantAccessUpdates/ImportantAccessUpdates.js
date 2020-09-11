@@ -4,9 +4,6 @@ import "./ImportantAccessUpdates.css";
 import ImportantAccessUpdate from './ImportantAccessUpdate/ImportantAccessUpdate';
 import CreateUpdate from './CreateUpdate/CreateUpdate';
 import {connect} from 'react-redux';
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 import { Route, Switch } from "react-router-dom";
 
 const ImportantAccessUpdates = (props) => {

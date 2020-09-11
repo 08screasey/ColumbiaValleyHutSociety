@@ -1,5 +1,4 @@
 import React from "react";
-import { Waypoint } from "react-waypoint";
 import OpacityAnimation from "../../UI/OpacityAnimation/OpacityAnimation";
 
 const HutAbout = (props) => {

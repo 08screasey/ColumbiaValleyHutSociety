@@ -1,5 +1,4 @@
 import React from 'react';
-import {connect} from 'react-redux';
 import {addDays} from '../../../Utility Functions/DateFunctions';
 import ObjectTable from '../../UI/ObjectTable/ObjectTable';
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";

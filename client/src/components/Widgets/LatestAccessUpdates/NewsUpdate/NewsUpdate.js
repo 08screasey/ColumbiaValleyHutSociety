@@ -1,6 +1,5 @@
 import React from "react";
 import "./NewsUpdate.css";
-import OpacityAnimation from "../../../UI/OpacityAnimation/OpacityAnimation";
 import {withRouter} from 'react-router-dom';
 const NewsUpdate = (props) => {
 	return (<React.Fragment>

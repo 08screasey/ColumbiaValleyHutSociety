@@ -33,7 +33,7 @@ const paymentInfo = {paymentId, token, payerId}
 
 props.onFinaliseBooking(userInfo, dates, hut, props.token, paymentInfo)
 
-},[])
+},[]) // eslint-disable-line react-hooks/exhaustive-deps
 
 
 
@@ -59,7 +59,6 @@ const mapStateToProps = state => {
 	loading:state.reservations.loading,
 		booking: state.reservations.booking,
 		userData: state.auth.userData,
-		token: state.auth.token,
 		completedReservation:state.reservations.completedReservation,
 		error:state.reservations.fetchError}
 };
