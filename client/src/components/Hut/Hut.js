@@ -8,6 +8,7 @@ import HutStats from "./HutStats/HutStats";
 import HutMap from "../../containers/Huts/HutMap/HutMap";
 import HutProvisions from "./HutProvisions/HutProvisions";
 import OpacityAnimation from "../UI/OpacityAnimation/OpacityAnimation";
+import { LazyLoadComponent } from 'react-lazy-load-image-component';
 import LatestAccessUpdates from "../Widgets/LatestAccessUpdates/LatestAccessUpdates";
 import { connect } from "react-redux";
 const Hut = (props) => {
@@ -39,7 +40,7 @@ const Hut = (props) => {
 	}
 
 	return (
-		<React.Fragment>
+		<LazyLoadComponent>
 			<div className={classes.join(" ")}>
 				<div className="Header-BG-Overlay"></div>
 			</div>
@@ -130,7 +131,7 @@ const Hut = (props) => {
 					</div>
 				</div>
 			</div>
-		</React.Fragment>
+		</LazyLoadComponent>
 	);
 };
 

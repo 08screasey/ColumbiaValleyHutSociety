@@ -5,7 +5,6 @@ const Image = (props) => {
 	const [enlarged, setEnlarged] = useState(false);
 
 	const clickHandler = () => {
-		props.onEnlarge(true);
 		setEnlarged(true);
 	};
 
@@ -14,7 +13,7 @@ const Image = (props) => {
 			<div
 				className={enlarged ? "Enlarge Active" : "Enlarge"}
 				onClick={() => {
-					props.onEnlarge(false);
+					
 					setEnlarged(false);
 				}}
 			></div>

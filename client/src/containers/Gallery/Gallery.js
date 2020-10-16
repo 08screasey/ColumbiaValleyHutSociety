@@ -10,7 +10,7 @@ import Image7 from "../../assets/HutSociety_McMurdo3.jpg";
 import Image8 from "../../assets/KMC Trip 1.jpg";
 import Image9 from "../../assets/MAndy snow 2.jpg";
 import Image10 from "../../assets/mountain 1.jpg";
-import Image11 from "../../assets/snow 29.jpg";
+import Image11 from "../../assets/Jumbo Pass Cabin.jpg";
 import Image12 from "../../assets/snow 910.jpg";
 import Image13 from "../../assets/mandy meadows.jpg";
 import Image14 from "../../assets/purcells 21.jpg";
@@ -18,7 +18,9 @@ import Image15 from "../../assets/HutSociety_LakeHangingGlacier.jpg";
 import Image16 from "../../assets/HutSociety_heliHikingPurcells.jpg";
 import { Waypoint } from "react-waypoint";
 
+
 import Image from "./Image/Image";
+import { LazyLoadComponent } from "react-lazy-load-image-component";
 
 const Gallery = (props) => {
 	const [inView, setInView] = useState(false);
@@ -51,7 +53,7 @@ const Gallery = (props) => {
 		);
 	});
 	return (
-		<React.Fragment>
+		<LazyLoadComponent>
 			<h3 className="Font0 DarkBlue my-4 TextOutline">Gallery</h3>
 			<div className={inView ? "row Gallery Visible" : "row Gallery"}>
 				<Waypoint
@@ -65,7 +67,7 @@ const Gallery = (props) => {
 					</div>
 				</Waypoint>
 			</div>
-		</React.Fragment>
+		</LazyLoadComponent>
 	);
 };
 

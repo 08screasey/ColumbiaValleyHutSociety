@@ -8,6 +8,7 @@ import ReservationBook from "./ReservationBook/ReservationBook";
 import PaymentSuccess from "./ReservationBook/PaymentSuccess/PaymentSuccess";
 import LatestAccessUpdates from "../../components/Widgets/LatestAccessUpdates/LatestAccessUpdates";
 import { Route, Switch } from "react-router-dom";
+import { LazyLoadComponent } from "react-lazy-load-image-component";
 
 const Reservations = (props) => {
 	useEffect(() => {
@@ -15,7 +16,7 @@ const Reservations = (props) => {
 	});
 
 	return (
-		<React.Fragment>
+		<LazyLoadComponent>
 			<div className="Reservations Header-BG"></div>
 			<div className="ReservationsContainer container-fluid Grey-BG">
 				<div className="row">
@@ -71,7 +72,7 @@ const Reservations = (props) => {
 					</div>
 				</div>
 			</div>
-		</React.Fragment>
+		</LazyLoadComponent>
 	);
 };
 
