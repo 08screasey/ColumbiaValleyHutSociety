@@ -1,12 +1,11 @@
-
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 let Comment = new mongoose.Schema({
-	date: { type: Date, default:Date.now},
-		author: String,
-		content: String,
-		userId:String,
-		articleId:String
-		});
+    date: { type: Date, default: Date.now },
+    author: String,
+    content: String,
+    userId: String,
+    articleId: String,
+});
 
-module.exports = mongoose.model("Comment", Comment);
+module.exports = mongoose.model('Comment', Comment);

@@ -1,31 +1,31 @@
 .Enlarge {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	opacity: 0;
-	transform: translateY(100%);
-	transition: opacity 1s;
-	background: rgba(0, 0, 0, 0.9);
-	z-index: 300;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 1s;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 300;
 }
 
 .Enlarge.Active {
-	opacity: 1;
-	transform: translateY(0);
-	display: block;
+    opacity: 1;
+    transform: translateY(0);
+    display: block;
 }
 
 img.Enlarge-Image {
-	position: fixed !important;
-	width: 90%;
-	max-width: 600px;
-	height: auto !important;
-	top: calc(25%);
-	z-index: 301;
-	object-fit: contain;
+    position: fixed !important;
+    width: 90%;
+    max-width: 600px;
+    height: auto !important;
+    top: calc(25%);
+    z-index: 301;
+    object-fit: contain;
 }
 img.Enlarge-Image:hover {
-	mix-blend-mode: normal;
+    mix-blend-mode: normal;
 }

@@ -1,18 +1,18 @@
 .Header-BG.Updates {
-	background-image: url("../../assets/snow 4.jpg");
-	background-position: center 40%;
-	background-attachment: scroll;
-	height: 500px;
-	position: fixed;
-	top: 0;
-	z-index: -1;
+    background-image: url('../../assets/snow 4.jpg');
+    background-position: center 40%;
+    background-attachment: scroll;
+    height: 500px;
+    position: fixed;
+    top: 0;
+    z-index: -1;
 }
 
 .UpdateContainer {
-	padding-top: 40px;
-	margin-top: 500px;
-	position: relative;
+    padding-top: 40px;
+    margin-top: 500px;
+    position: relative;
 }
 
-.UpdateContainer .AddButton{
+.UpdateContainer .AddButton {
 }

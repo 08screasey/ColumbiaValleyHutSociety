@@ -1,41 +1,41 @@
 .NavItem a {
-	color: #e3ba31;
+    color: #e3ba31;
 }
 .NavItem a:hover,
 .NavItem span:hover {
-	color: #e3ba31;
-	text-decoration: underline;
-	cursor: pointer;
+    color: #e3ba31;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .NavItem {
-	font-family: "Bungee", cursive;
+    font-family: 'Bungee', cursive;
 }
 
 .DropdownList {
-	list-style: none;
-	padding: 10px 30px;
+    list-style: none;
+    padding: 10px 30px;
 }
 
 .DropdownList a {
-	color: #224146;
+    color: #224146;
 }
 .DropdownList a:hover {
-	color: #224146;
+    color: #224146;
 }
 span::after {
-	transition: 0.5s;
+    transition: 0.5s;
 }
 .Open::after {
-	transform: rotateZ(-180deg);
+    transform: rotateZ(-180deg);
 }
 
 .MenuDropdown {
-	transition: 0.5s;
-	overflow: hidden;
-	height: 0px;
+    transition: 0.5s;
+    overflow: hidden;
+    height: 0px;
 }
 
 .MenuDropdown.Open {
-	height: 100%;
+    height: 100%;
 }

@@ -1,47 +1,47 @@
-.SignUpAlert{
-	position:fixed;
-	top:10%;
-	left:10%;
-	width:80%;
-	background:hsl(190.8, 35.4%, 97.6%);
-	border-radius: 10px;
-	text-align:left;
-	padding:15px 30px;
-	z-index:101;
-	overflow: hidden;
-	overflow-wrap: normal;
-	border: 2px solid hsl(190.8, 55.4%, 45.6%);
+.SignUpAlert {
+    position: fixed;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    background: hsl(190.8, 35.4%, 97.6%);
+    border-radius: 10px;
+    text-align: left;
+    padding: 15px 30px;
+    z-index: 101;
+    overflow: hidden;
+    overflow-wrap: normal;
+    border: 2px solid hsl(190.8, 55.4%, 45.6%);
 }
 
-.SignUpAlert svg{
-position:absolute;
-top:10px;
-right:10px;
+.SignUpAlert svg {
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
 
-.SignUpAnimation-enter{
-opacity:0;
-transform: scale(0.8);
+.SignUpAnimation-enter {
+    opacity: 0;
+    transform: scale(0.8);
 }
-.SignUpAnimation-enter-active{
-	transition: 0.8s;
-	opacity:1;
-	transform: scale(1);
+.SignUpAnimation-enter-active {
+    transition: 0.8s;
+    opacity: 1;
+    transform: scale(1);
 }
-.SignUpAnimation-enter-done{
-	opacity:1;
-	transform: scale(1);
+.SignUpAnimation-enter-done {
+    opacity: 1;
+    transform: scale(1);
 }
-.SignUpAnimation-exit{
-opacity:1;
-transform: scale(1);
+.SignUpAnimation-exit {
+    opacity: 1;
+    transform: scale(1);
 }
-.SignUpAnimation-exit-active{
-	transition: 0.2s;
-	opacity:0;
-	transform: scale(0.8);
+.SignUpAnimation-exit-active {
+    transition: 0.2s;
+    opacity: 0;
+    transform: scale(0.8);
 }
-.SignUpAnimation-exit-done{
-	opacity:0;
-	transform: scale(0.8);
+.SignUpAnimation-exit-done {
+    opacity: 0;
+    transform: scale(0.8);
 }

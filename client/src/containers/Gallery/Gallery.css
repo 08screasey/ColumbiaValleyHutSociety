@@ -1,75 +1,75 @@
 .Gallery img {
-	width: 50%;
-	max-width: 300px;
-	opacity: 0;
-	transform: scale(0.9);
-	height: 200px;
-	object-fit: cover;
+    width: 50%;
+    max-width: 300px;
+    opacity: 0;
+    transform: scale(0.9);
+    height: 200px;
+    object-fit: cover;
 }
 
 .Gallery.Visible img {
-	animation: fadeIn 0.4s linear forwards;
+    animation: fadeIn 0.4s linear forwards;
 }
 
 .Gallery img:hover {
-	mix-blend-mode: soft-light;
+    mix-blend-mode: soft-light;
 }
 .Gallery {
-	background: rgba(50, 50, 50, 1);
+    background: rgba(50, 50, 50, 1);
 }
 
 .Gallery.Visible img:nth-of-type(1) {
-	animation-delay: 0s;
+    animation-delay: 0s;
 }
 .Gallery.Visible img:nth-of-type(2) {
-	animation-delay: 0.2s;
+    animation-delay: 0.2s;
 }
 .Gallery.Visible img:nth-of-type(3) {
-	animation-delay: 0.4s;
+    animation-delay: 0.4s;
 }
 .Gallery.Visible img:nth-of-type(4) {
-	animation-delay: 0.6s;
+    animation-delay: 0.6s;
 }
 .Gallery.Visible img:nth-of-type(5) {
-	animation-delay: 0.8s;
+    animation-delay: 0.8s;
 }
 .Gallery.Visible img:nth-of-type(6) {
-	animation-delay: 1s;
+    animation-delay: 1s;
 }
 .Gallery.Visible img:nth-of-type(7) {
-	animation-delay: 1.2s;
+    animation-delay: 1.2s;
 }
 .Gallery.Visible img:nth-of-type(8) {
-	animation-delay: 1.4s;
+    animation-delay: 1.4s;
 }
 .Gallery.Visible img:nth-of-type(9) {
-	animation-delay: 1.6s;
+    animation-delay: 1.6s;
 }
 .Gallery.Visible img:nth-of-type(10) {
-	animation-delay: 1.8s;
+    animation-delay: 1.8s;
 }
 .Gallery.Visible img:nth-of-type(11) {
-	animation-delay: 2s;
+    animation-delay: 2s;
 }
 .Gallery.Visible img:nth-of-type(12) {
-	animation-delay: 2.2s;
+    animation-delay: 2.2s;
 }
 .Gallery.Visible img:nth-of-type(13) {
-	animation-delay: 2.4s;
+    animation-delay: 2.4s;
 }
 .Gallery.Visible img:nth-of-type(14) {
-	animation-delay: 2.6s;
+    animation-delay: 2.6s;
 }
 .Gallery.Visible img:nth-of-type(15) {
-	animation-delay: 2.8s;
+    animation-delay: 2.8s;
 }
 .Gallery.Visible img:nth-of-type(16) {
-	animation-delay: 3s;
+    animation-delay: 3s;
 }
 
 @keyframes fadeIn {
-	to {
-		opacity: 1;
-		transform: scale(1);
-	}
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }

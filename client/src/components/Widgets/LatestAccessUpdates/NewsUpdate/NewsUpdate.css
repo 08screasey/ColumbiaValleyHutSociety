@@ -1,7 +1,7 @@
 .NewsUpdate p {
-	margin: 0px;
+    margin: 0px;
 }
-.NewsUpdate:hover{
-	cursor: pointer;
-	background: hsl(207.5, 20.7%, 82.9%)
+.NewsUpdate:hover {
+    cursor: pointer;
+    background: hsl(207.5, 20.7%, 82.9%);
 }

@@ -1,22 +1,22 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 let TempBookingSchema = new mongoose.Schema({
-	dates: [String],
-	userId: String,
+    dates: [String],
+    userId: String,
 });
 
 let Hut = new mongoose.Schema({
-	name: String,
-	bookings: [
-		{
-			type: mongoose.Schema.Types.ObjectId,
-			ref: "Booking",
-		},
-	],
-	filledDates: [{ type: String }],
-	temporaryBookings: [TempBookingSchema],
-	price: [Number],
-	maxNights: Number,
+    name: String,
+    bookings: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Booking',
+        },
+    ],
+    filledDates: [{ type: String }],
+    temporaryBookings: [TempBookingSchema],
+    price: [Number],
+    maxNights: Number,
 });
 
-module.exports = mongoose.model("Hut", Hut);
+module.exports = mongoose.model('Hut', Hut);

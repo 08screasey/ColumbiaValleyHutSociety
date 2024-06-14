@@ -1,34 +1,34 @@
 .Auth .Header-BG {
-	background-image: url(../../assets/KMC Trip 1.jpg);
-	height: 400px;
+    background-image: url(../../assets/KMC Trip 1.jpg);
+    height: 400px;
 }
 
 .AuthForm {
-	width: 90%;
-	max-width: 400px;
-	margin: 70px auto 10px auto;
+    width: 90%;
+    max-width: 400px;
+    margin: 70px auto 10px auto;
 }
 
 .AuthForm .Login {
-	background: none;
-	outline: none;
-	border: none;
+    background: none;
+    outline: none;
+    border: none;
 }
 
-.AuthForm .Login:disabled{
-	color:hsl(190.8, 35.4%, 81.6%);
+.AuthForm .Login:disabled {
+    color: hsl(190.8, 35.4%, 81.6%);
 }
 
 .Auth .Link:hover {
-	text-decoration: underline;
+    text-decoration: underline;
 }
 
 .SignUp {
-	overflow: hidden;
-	height: 0px;
-	transition: 0.8s;
+    overflow: hidden;
+    height: 0px;
+    transition: 0.8s;
 }
 
 .SignUp.Visible {
-	height: auto;
+    height: auto;
 }

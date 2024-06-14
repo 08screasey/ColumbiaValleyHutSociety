@@ -1,40 +1,41 @@
 .Comment span.Blue:hover {
-color: hsl(190.8, 55.4%, 41.6%);
-text-decoration: underline;
+    color: hsl(190.8, 55.4%, 41.6%);
+    text-decoration: underline;
 }
 
-.CommentContent{
-text-overflow: ellipsis;
-white-space: normal;
-display: inline-block !important;
-word-break: break-all;
-text-align: left;
-min-width:30%;
-max-width:600px;
-position:relative;
-margin-left:8px;}
+.CommentContent {
+    text-overflow: ellipsis;
+    white-space: normal;
+    display: inline-block !important;
+    word-break: break-all;
+    text-align: left;
+    min-width: 30%;
+    max-width: 600px;
+    position: relative;
+    margin-left: 8px;
+}
 
 .CommentContent:before {
-  content: "";
-  width: 0px;
-  height: 0px;
-  position: absolute;
-  border-left: 10px solid transparent;
-  border-right: 10px solid hsl(207.5, 20.7%, 86.9%);
-  border-top: 10px solid hsl(207.5, 20.7%, 86.9%);
-  border-bottom: 10px solid transparent;
-  left: -15px;
-  top: 6px;
+    content: '';
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 10px solid transparent;
+    border-right: 10px solid hsl(207.5, 20.7%, 86.9%);
+    border-top: 10px solid hsl(207.5, 20.7%, 86.9%);
+    border-bottom: 10px solid transparent;
+    left: -15px;
+    top: 6px;
 }
 
-.CommentDate{
-	position:absolute;
-	bottom:4px;
-	right:12px;
+.CommentDate {
+    position: absolute;
+    bottom: 4px;
+    right: 12px;
 }
 
-.CommentDelete{
-	position: absolute;
-	top:10px;
-	right:13px;
+.CommentDelete {
+    position: absolute;
+    top: 10px;
+    right: 13px;
 }
