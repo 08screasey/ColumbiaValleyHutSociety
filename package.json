@@ -9,8 +9,9 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "node server.js",
-        "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
-        "prettier:write": "prettier .  -w"
+        "prettier:write": "prettier .  -w",
+        "install:all": "npm install && cd client && npm install && cd ..",
+        "build:all": "npm run build && cd client && npm run build && cd .."
     },
     "author": "",
     "license": "ISC",
