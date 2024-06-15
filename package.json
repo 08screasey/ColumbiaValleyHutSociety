@@ -11,7 +11,7 @@
         "start": "node server.js",
         "prettier:write": "prettier .  -w",
         "install:all": "npm install && cd client && npm install && cd ..",
-        "build:all": "npm run build && cd client && npm run build && cd .."
+        "build:all": "cd client && npm run build && cd .."
     },
     "author": "",
     "license": "ISC",
